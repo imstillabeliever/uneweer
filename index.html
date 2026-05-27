@@ -15,22 +15,51 @@
       box-sizing: border-box;
     }
 
-    body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-    }
+    body{
+  background-image:url("bg.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height:100vh;
+  color:white;
+}
 
-    body {
-  font-family: 'Inter', sans-serif;
-  color: white;
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  z-index:0;
+}
 
-  background-image: url("bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-    }
+.container{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+.card{
+  width:400px;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,0,0,0.3);
+  box-shadow:0 0 40px rgba(255,0,0,0.15);
+
+  background-image:url("card.jpg");
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
 
     .noise {
       position: fixed;
